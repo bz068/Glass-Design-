@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  /* position: relative; */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Yusei Magic", sans-serif;
+}
+
+.circle1,
+.circle2 {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.9) 65%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  /* backdrop-filter: blur(2rem); */
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.circle1 {
+  position: absolute;
+  top: 9%;
+  right: 5%;
+  /* z-index: 2; */
+}
+
+.circle2 {
+  position: absolute;
+  bottom: 7%;
+  left: 15%;
+  /* z-index: 2; */
+  /* display: none; */
+}
+
+.glass {
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  width: 80%;
+  height: 70vh;
+  /* margin: 0 auto; */
+  z-index: 5;
+  backdrop-filter: blur(1rem);
+  display: flex;
+  position: relative;
+}
+.fa-bars {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.fa-bars:hover {
+  transform: rotate(90deg);
+  font-size: 2rem;
+}
+
+.dashboard {
+  flex: 1;
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  display: none;
+  /* transition: 1s ease; */
+}
+
+.showDashboard {
+  display: flex;
+}
+.fa-window-close {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  color: red;
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: all 0.1s ease-in;
+}
+.fa-window-close:hover {
+  font-size: 1.8rem;
+}
+.dashboard .user {
+  text-align: center;
+}
+
+.user i {
+  background-color: rgb(207, 200, 200);
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  opacity: 0.5;
+}
+
+.link {
+  display: flex;
+  margin: 2rem 0;
+  padding: 1rem 5rem;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.link a {
+  padding: 0rem 2rem;
+  text-decoration: none;
+  color: #2f6068;
+  font-size: 1.5rem;
+}
+
+.link:hover {
+  background-color: #6cdbeb;
+  cursor: pointer;
+}
+
+.link i {
+  font-size: 1.3rem;
+  color: #386970;
+}
+
+.dashbroadFooter {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  padding: 4rem 4rem;
+  border-radius: 1rem;
+}
+.glassBody {
+  flex: 2;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.glassBody .head {
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+  color: #1a6e7a;
+}
+
+input[type="text"] {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 8px;
+  width: 70%;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.glassMain {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: ; */
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-transform: capitalize;
+  color: #386970;
+  font-size: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 400px;
+  padding: 2rem 2rem;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  transition: all 0.1s linear;
+}
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.card i {
+  font-size: 1.6rem;
+}
+/* width */
+::-webkit-scrollbar {
+  /* width: 10px; */
+  visibility: hidden;
+  /* -webkit-appearance: none; */
+}
+
+@media screen and (max-width: 600px) {
+  .glassMain {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .glass {
+    width: 97%;
+    height: 94vh;
+    margin-top: 30px 0;
+    /* display: block; */
+  }
+  .card {
+    width: 90%;
+  }
+}
